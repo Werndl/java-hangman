@@ -8,12 +8,21 @@ import java.util.Scanner;
 public class WordsList {
 
     public static ArrayList<String> makingTable() throws FileNotFoundException {
-        Scanner words = new Scanner(new File("C:/Users/Student20/IdeaProjects/java-hangman/src/main/resources/slowa.txt"));
+        File file = new File(
+                WordsList.class.getClassLoader().getResource("slowa.txt").getFile()
+        );
+
+        Scanner words = new Scanner(file);
+
         ArrayList<String> wordsList = new ArrayList();
         while (words.hasNext()){
-            wordsList.add(words.next());
+            String word = words.next();
+            word = word.toLowerCase();
+            wordsList.add(word);
+
         }
         words.close();
         return wordsList;
     }
+
 }
