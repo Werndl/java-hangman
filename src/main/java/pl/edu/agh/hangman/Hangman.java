@@ -1,5 +1,7 @@
 package pl.edu.agh.hangman;
 
+import java.io.FileNotFoundException;
+
 public class Hangman {
 
     public static final String[] HANGMANPICS = new String[]{
@@ -54,7 +56,8 @@ public class Hangman {
                     "========"
     };
 
-    public static void main(String[] args) {
-        System.out.println(WordsList);
+    public static void main(String[] args) throws FileNotFoundException {
+        WordsList.makingTable();
+        System.out.println(WordsList.makingTable());
     }
 }
