@@ -3,6 +3,7 @@ package pl.edu.agh.hangman;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class WordsList {
@@ -19,10 +20,15 @@ public class WordsList {
             String word = words.next();
             word = word.toLowerCase();
             wordsList.add(word);
-
         }
         words.close();
         return wordsList;
+    }
+
+    public static String drawWord(ArrayList<String> list) {
+        Random random = new Random();
+        int a = random.nextInt(list.size());
+        return list.get(a);
     }
 
 }
